@@ -26,7 +26,6 @@
     "mounts": [
         "source=fedora-dnf-cache,target=/var/cache/dnf,type=volume",
         "source=fedora-bash-history,target=/home/container/.cache/bash_history,type=volume",
-        "source=fedora-rust-vscode-server-extensions,target=/home/container/.vscode-server/extensions,type=volume",
         "source=fedora-cargo-cache,target=/home/container/.cargo/registry,type=volume"
     ],
 

@@ -29,9 +29,6 @@ RUN set -eux; \
     sudo sh -c "$(curl -sSL https://starship.rs/install.sh)" -- -y; \
     # Initialize cache folder (for correct user permission)
     mkdir -p ${HOME}/.cache; \
-    # Initialize vscode server folder (for correct user permission)
-    mkdir -p ${HOME}/.vscode-server/extensions; \
-    chown -R ${USERNAME} ${HOME}/.vscode-server; \
     # Clean step
     sudo dnf clean all
 

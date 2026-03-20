@@ -1,8 +1,8 @@
-# VSCode Dev Containers
+# Dev Containers
 
 ## Getting Started
 
-This repository contains dedicated scripts to automate the management of [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) for Visual Studio Code.
+This repository contains dedicated scripts to automate the management of [Dev Containers](https://containers.dev/). Any IDE that supports the Dev Container specification can use these containers.
 
 These dev containers are specifically designed to provide a consistent and reproducible development environment. Here is an overview of the available containers:
 
@@ -20,7 +20,7 @@ All of the containers are based on a [common base image](./images/base/Dockerfil
 
 To use this repository, follow these steps:
 
-1. Run the `vscode-sync-config-files` script to pull the necessary configuration files from your system.
-2. Build the desired dev container using the `vscode-sync-dev-images -v VARIANT` command where `VARIANT` is the name of the container you want to build.
-3. Create the `.devcontainer` folder inside your project using the `vscode-sync-dev-images -v VARIANT` command. Warning: this command must be called from the root of your project.
-4. Install the VSCode [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and open the folder of your project with VSCode. A popup should open asking you to reopen the folder in a container.
+1. Run the `dev-container-sync-config` script to pull the necessary configuration files from your system.
+2. Build the desired dev container using the `dev-container-sync-images -v VARIANT` command where `VARIANT` is the name of the container you want to build.
+3. Create the `.devcontainer` folder inside your project using the `dev-container-create -v VARIANT` command. Warning: this command must be called from the root of your project.
+4. Open the folder of your project with your IDE. It should detect the `.devcontainer` configuration and offer to reopen the project inside the container.

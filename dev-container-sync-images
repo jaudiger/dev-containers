@@ -21,7 +21,7 @@ build_dev_image () {
 
     echo "Building ${distribution}-${variant}-base-image for ${platform}"
 
-    if [[ -f "${VSCODE_DEV_CONTAINER_PATH}/images/base/Dockerfile.${variant}" ]]; then
+    if [[ -f "${DEV_CONTAINER_PATH}/images/base/Dockerfile.${variant}" ]]; then
         # Derive the tag from the platform
         if [[ "${platform}" == "${DEFAULT_PLATFORM}" ]]; then
             local -r tag="latest"
@@ -31,7 +31,7 @@ build_dev_image () {
         fi
 
         docker image rm "${distribution}-${variant}-base-image:${tag}"
-        docker build --platform "${platform}" -f "${VSCODE_DEV_CONTAINER_PATH}/images/base/Dockerfile.${variant}" -t "${distribution}-${variant}-base-image:${tag}" "${VSCODE_DEV_CONTAINER_PATH}"
+        docker build --platform "${platform}" -f "${DEV_CONTAINER_PATH}/images/base/Dockerfile.${variant}" -t "${distribution}-${variant}-base-image:${tag}" "${DEV_CONTAINER_PATH}"
     fi
 }
 
@@ -40,7 +40,7 @@ VARIANT=""
 DEFAULT_PLATFORM=$(docker system info --format '{{.OSType}}/{{.Architecture}}')
 PLATFORM=${DEFAULT_PLATFORM}
 
-readonly VSCODE_DEV_CONTAINER_PATH="${HOME}/Development/git-repositories/jaudiger/vscode-dev-containers"
+readonly DEV_CONTAINER_PATH="${HOME}/Development/git-repositories/jaudiger/dev-containers"
 readonly VARIANTS=(
     core
     c

@@ -20,7 +20,7 @@ VARIANT="core"
 FORCE=0
 COPY=0
 
-readonly VSCODE_DEV_CONTAINER_PATH="${HOME}/Development/git-repositories/jaudiger/vscode-dev-containers"
+readonly DEV_CONTAINER_PATH="${HOME}/Development/git-repositories/jaudiger/dev-containers"
 readonly DEVCONTAINER_FOLDER_NAME=".devcontainer"
 
 # Option parsing
@@ -72,7 +72,7 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Create symbolic links
-COMMON_PATH=${VSCODE_DEV_CONTAINER_PATH}/images/variants/${VARIANT}
+COMMON_PATH=${DEV_CONTAINER_PATH}/images/variants/${VARIANT}
 CURRENT_DIR_NAME=${PWD##*/}
 
 if [[ "${CURRENT_DIR_NAME}" = "${DEVCONTAINER_FOLDER_NAME}" ]]; then

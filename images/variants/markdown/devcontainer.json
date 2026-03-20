@@ -24,8 +24,7 @@
     // Mount specific volumes into the container
     "mounts": [
         "source=fedora-dnf-cache,target=/var/cache/dnf,type=volume",
-        "source=fedora-markdown-bash-history,target=/home/container/.cache/bash_history,type=volume",
-        "source=fedora-markdown-vscode-server-extensions,target=/home/container/.vscode-server/extensions,type=volume"
+        "source=fedora-markdown-bash-history,target=/home/container/.cache/bash_history,type=volume"
     ],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally
